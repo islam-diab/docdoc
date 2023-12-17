@@ -1,4 +1,5 @@
-import 'package:docdoc/core/theming/colors.dart';
+import 'package:docdoc/core/helpers/extensions.dart';
+import 'package:docdoc/core/routing/routes.dart';
 import 'package:docdoc/core/theming/text_styles.dart';
 import 'package:docdoc/features/on_boarding/ui/widgets/get_started_button.dart';
 import 'package:docdoc/features/on_boarding/ui/widgets/onbording_doc_and_text.dart';
@@ -33,13 +34,18 @@ class OnBoardingScreen extends StatelessWidget {
                     children: [
                       Text(
                         'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
-                        style: TextStyles.font13greyRegular,
+                        style: TextStyles.font13GrayRegular,
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(
                         height: 30.h,
                       ),
-                      const GetStartedButton(),
+                      GetStartedButton(
+                        onPressed: () {
+                          context.pushNamed(Routes.loginScreen);
+                        },
+                        name: 'Get Started',
+                      ),
                     ],
                   ),
                 ),

@@ -1,20 +1,21 @@
-import 'package:docdoc/core/helpers/extensions.dart';
-import 'package:docdoc/core/routing/routes.dart';
 import 'package:docdoc/core/theming/colors.dart';
 import 'package:docdoc/core/theming/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedButton extends StatelessWidget {
+  final String name;
+  final VoidCallback onPressed;
+
   const GetStartedButton({
     super.key,
+    required this.name,
+    required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {
-        context.pushNamed(Routes.loginScreen);
-      },
+      onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(ColorsManager.mainBlue),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -28,8 +29,8 @@ class GetStartedButton extends StatelessWidget {
         ),
       ),
       child: Text(
-        'Get Started',
-        style: TextStyles.font16whiteSemiBold,
+        name,
+        style: TextStyles.font16WhiteSemiBold,
       ),
     );
   }
