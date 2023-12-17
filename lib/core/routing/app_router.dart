@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
-    final argument = settings.arguments;
+    // final argument = settings.arguments;
 
     switch (settings.name) {
       case Routes.onBordingScreen:

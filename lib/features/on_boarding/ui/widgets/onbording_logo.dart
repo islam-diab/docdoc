@@ -17,7 +17,7 @@ class OnBordingLogo extends StatelessWidget {
         ),
         Text(
           'DocDoc',
-          style: TextStyles.font24blac700w,
+          style: TextStyles.font24BlackBold,
         ),
       ],
     );
