@@ -7,12 +7,25 @@ class AppTextFormField extends StatelessWidget {
   final String? hintText;
   final Widget? suffixIcon;
   final bool? isObscureText;
-  const AppTextFormField(
-      {super.key, required this.hintText, this.suffixIcon, this.isObscureText});
+  final Function(String?) validator;
+  final TextEditingController controller;
+
+  const AppTextFormField({
+    super.key,
+    required this.hintText,
+    this.suffixIcon,
+    this.isObscureText,
+    required this.validator,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      validator: (value) {
+        return validator(value);
+      },
       obscureText: isObscureText ?? false,
       style: TextStyles.font14DarkBlueMedium,
       decoration: InputDecoration(
@@ -27,11 +40,26 @@ class AppTextFormField extends StatelessWidget {
           vertical: 18.h,
         ),
         focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: ColorsManager.mainBlue,
-              width: 1.3.w,
-            ),
-            borderRadius: BorderRadius.circular(16.0)),
+          borderSide: BorderSide(
+            color: ColorsManager.mainBlue,
+            width: 1.3.w,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: ColorsManager.lighterGray,
