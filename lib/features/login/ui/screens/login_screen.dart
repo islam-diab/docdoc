@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../on_boarding/ui/widgets/get_started_button.dart';
-import '../../data/model/login_request_body.dart';
 import '../../logic/cubit/login_cubit.dart';
 import '../widget/email_and_passwored.dart';
 import '../widget/login_bloc_listener.dart';
@@ -65,12 +64,8 @@ class LoginScreen extends StatelessWidget {
 
   void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      context.read<LoginCubit>().emitLoginStates(
-            LoginRequestBody(
-              email: context.read<LoginCubit>().emailController.text,
-              password: context.read<LoginCubit>().passwordController.text,
-            ),
-          );
+      context.read<LoginCubit>().emitLoginStates();
+      context.read<LoginCubit>().emitLoginStates();
     }
   }
 }

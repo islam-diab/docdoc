@@ -1,4 +1,7 @@
+import 'package:docdoc/core/helpers/extensions.dart';
+import 'package:docdoc/core/routing/routes.dart';
 import 'package:docdoc/core/theming/text_styles.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 
 class TextTermsConditions extends StatelessWidget {
@@ -27,12 +30,16 @@ class TextTermsConditions extends StatelessWidget {
             style: TextStyles.font13DarkBlueMedium.copyWith(height: 1.4),
           ),
           TextSpan(
-            text: '\n Already have an account yet? ',
+            text: '\n Don\'t have an account?  ',
             style: TextStyles.font13DarkBlueRegular.copyWith(height: 7),
           ),
           TextSpan(
             text: 'Sign Up',
             style: TextStyles.font13BlueSemiBold,
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                context.pushReplacementNamed(Routes.signUpScreen);
+              },
           ),
         ],
       ),

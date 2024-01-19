@@ -3,7 +3,6 @@ import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/helpers/spaser.dart';
-import 'passwored_validations.dart';
 import 'text_form_field.dart';
 
 class EmailAndPasswored extends StatefulWidget {
@@ -52,6 +51,7 @@ class _EmailAndPassworedState extends State<EmailAndPasswored> {
       child: Column(
         children: [
           AppTextFormField(
+            keyboardType: TextInputType.emailAddress,
             hintText: 'Email',
             validator: (value) {
               if (value == null ||
@@ -86,13 +86,13 @@ class _EmailAndPassworedState extends State<EmailAndPasswored> {
             controller: context.read<LoginCubit>().passwordController,
           ),
           verticalSpace(24),
-          PasswordValidations(
-            hasLowercase: hasLowercase,
-            hasUppercase: hasUppercase,
-            hasSpecialCharacters: hasSpecialCharacters,
-            hasNumber: hasNumber,
-            hasMinLength: hasMinLength,
-          ),
+          // PasswordValidations(
+          //   hasLowercase: hasLowercase,
+          //   hasUppercase: hasUppercase,
+          //   hasSpecialCharacters: hasSpecialCharacters,
+          //   hasNumber: hasNumber,
+          //   hasMinLength: hasMinLength,
+          // ),
         ],
       ),
     );

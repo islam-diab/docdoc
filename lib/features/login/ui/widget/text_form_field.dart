@@ -1,7 +1,8 @@
-import 'package:docdoc/core/theming/colors.dart';
-import 'package:docdoc/core/theming/text_styles.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:docdoc/core/theming/colors.dart';
+import 'package:docdoc/core/theming/text_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
   final String? hintText;
@@ -9,19 +10,22 @@ class AppTextFormField extends StatelessWidget {
   final bool? isObscureText;
   final Function(String?) validator;
   final TextEditingController controller;
+ final TextInputType? keyboardType;
 
   const AppTextFormField({
-    super.key,
+    Key? key,
     required this.hintText,
     this.suffixIcon,
     this.isObscureText,
     required this.validator,
     required this.controller,
-  });
+    this.keyboardType,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: keyboardType ?? TextInputType.text,
       controller: controller,
       validator: (value) {
         return validator(value);
