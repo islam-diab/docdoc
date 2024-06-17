@@ -1,4 +1,5 @@
 import 'package:docdoc/core/helpers/extensions.dart';
+import 'package:docdoc/core/helpers/spaser.dart';
 import 'package:docdoc/core/routing/routes.dart';
 import 'package:docdoc/core/theming/text_styles.dart';
 import 'package:docdoc/features/on_boarding/ui/widgets/get_started_button.dart';
@@ -24,9 +25,7 @@ class OnBoardingScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const OnBordingLogo(),
-                SizedBox(
-                  height: 30.h,
-                ),
+                verticalSpace(30),
                 const OnborgingDocAndText(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
