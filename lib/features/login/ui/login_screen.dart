@@ -1,5 +1,6 @@
 import 'package:docdoc/core/helpers/spaser.dart';
 import 'package:docdoc/core/theming/text_styles.dart';
+import 'package:docdoc/features/login/ui/widget/Text_terms_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,7 +8,6 @@ import '../../on_boarding/ui/widgets/get_started_button.dart';
 import '../logic/cubit/login_cubit.dart';
 import 'widget/email_and_passwored.dart';
 import 'widget/login_bloc_listener.dart';
-import 'widget/text_terms_conditions.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                     name: 'Login',
                   ),
                   verticalSpace(32),
-                  const TextTermsConditions(),
+                const TextTermsConditions(),
                   const LoginBlocListener(),
                 ],
               ),
