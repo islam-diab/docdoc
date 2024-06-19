@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "772145003109",
+    "project_id": "app-distribution-411ac",
+    "storage_bucket": "app-distribution-411ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772145003109:android:b70a9878ca4b613419e48c",
+        "android_client_info": {
+          "package_name": "com.example.docdoc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3HhSgRSt44dswGWp4HJ7bTIbAKeodORw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
