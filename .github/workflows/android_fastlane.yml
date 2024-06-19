@@ -16,7 +16,6 @@ jobs:
              uses: actions/setup-java@v1
              with:
                 java-version: 11
-                
 
            - name: install flutter
              uses: subosito/flutter-action@v2
@@ -36,3 +35,4 @@ jobs:
              run: |
               bundle exec fastlane android firebase_distribute
              working-directory: android
+
