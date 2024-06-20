@@ -15,27 +15,27 @@ class TextTermsConditions extends StatelessWidget {
         children: [
           TextSpan(
             text: 'By logging, you agree to our ',
-            style: TextStyles.font13GrayRegular,
+            style: AppTextStyles.font13GrayRegular,
           ),
           TextSpan(
             text: 'Terms & Conditions',
-            style: TextStyles.font13DarkBlueMedium,
+            style: AppTextStyles.font13DarkBlueMedium,
           ),
           TextSpan(
             text: ' and ',
-            style: TextStyles.font13GrayRegular,
+            style: AppTextStyles.font13GrayRegular,
           ),
           TextSpan(
             text: 'PrivacyPolicy.',
-            style: TextStyles.font13DarkBlueMedium.copyWith(height: 1.4),
+            style: AppTextStyles.font13DarkBlueMedium.copyWith(height: 1.4),
           ),
           TextSpan(
             text: '\n Don\'t have an account?  ',
-            style: TextStyles.font13DarkBlueRegular.copyWith(height: 7),
+            style: AppTextStyles.font13DarkBlueRegular.copyWith(height: 7),
           ),
           TextSpan(
             text: 'Sign Up',
-            style: TextStyles.font13BlueSemiBold,
+            style: AppTextStyles.font13BlueSemiBold,
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 context.pushReplacementNamed(Routes.signUpScreen);

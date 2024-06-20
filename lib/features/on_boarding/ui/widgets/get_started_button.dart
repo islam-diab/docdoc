@@ -17,12 +17,12 @@ class GetStartedButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(ColorsManager.mainBlue),
+        backgroundColor: WidgetStateProperty.all(ColorsManager.mainBlue),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: MaterialStateProperty.all(
+        minimumSize: WidgetStateProperty.all(
           const Size(double.infinity, 52),
         ),
-        shape: MaterialStateProperty.all(
+        shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
@@ -30,7 +30,7 @@ class GetStartedButton extends StatelessWidget {
       ),
       child: Text(
         name,
-        style: TextStyles.font16WhiteSemiBold,
+        style: AppTextStyles.font16WhiteSemiBold,
       ),
     );
   }

@@ -10,7 +10,7 @@ class AppTextFormField extends StatelessWidget {
   final bool? isObscureText;
   final Function(String?) validator;
   final TextEditingController controller;
- final TextInputType? keyboardType;
+  final TextInputType? keyboardType;
 
   const AppTextFormField({
     Key? key,
@@ -31,12 +31,12 @@ class AppTextFormField extends StatelessWidget {
         return validator(value);
       },
       obscureText: isObscureText ?? false,
-      style: TextStyles.font14DarkBlueMedium,
+      style: AppTextStyles.font14DarkBlueMedium,
       decoration: InputDecoration(
         fillColor: ColorsManager.moreLightGray,
         filled: true,
         isDense: true,
-        hintStyle: TextStyles.font14LightGrayRegular,
+        hintStyle: AppTextStyles.font14LightGrayRegular,
         hintText: hintText,
         suffixIcon: suffixIcon,
         contentPadding: EdgeInsets.symmetric(

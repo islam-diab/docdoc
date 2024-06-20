@@ -24,12 +24,12 @@ class LoginScreen extends StatelessWidget {
             children: [
               Text(
                 'Wlcome Back',
-                style: TextStyles.font24BlueBold,
+                style: AppTextStyles.font24BlueBold,
               ),
               verticalSpace(20),
               Text(
                 'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
-                style: TextStyles.font14GrayRegular,
+                style: AppTextStyles.font14GrayRegular,
               ),
               verticalSpace(30),
               Column(
@@ -40,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: Text(
                       'Forget Password?',
-                      style: TextStyles.font13BlueRegular,
+                      style: AppTextStyles.font13BlueRegular,
                     ),
                   ),
                   verticalSpace(40),
@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                     name: 'Login',
                   ),
                   verticalSpace(32),
-                const TextTermsConditions(),
+                  const TextTermsConditions(),
                   const LoginBlocListener(),
                 ],
               ),
