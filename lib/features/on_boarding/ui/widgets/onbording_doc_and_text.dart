@@ -31,7 +31,7 @@ class OnborgingDocAndText extends StatelessWidget {
           child: Text(
             'Best Doctor \n Appointment App',
             textAlign: TextAlign.center,
-            style: TextStyles.font32BlueBold.copyWith(
+            style: AppTextStyles.font32BlueBold.copyWith(
               height: 1.4,
             ),
           ),
