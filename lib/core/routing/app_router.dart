@@ -1,5 +1,6 @@
 import 'package:docdoc/core/di/dependecy_injection.dart';
 import 'package:docdoc/core/routing/routes.dart';
+import 'package:docdoc/features/home/logic/home_cubit.dart';
 import 'package:docdoc/features/home/ui/screen/home_screen.dart';
 import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/login/ui/login_screen.dart';
@@ -8,11 +9,12 @@ import 'package:docdoc/features/sign_up/logic/sign_up_cubit.dart';
 import 'package:docdoc/features/sign_up/ui/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 // * how to route defferent pages*
 // *
 
 class AppRouter {
-  Route generateRoute(RouteSettings settings) {
+  Route? generateRoute(RouteSettings settings) {
     // final argument = settings.arguments;
 
     switch (settings.name) {
@@ -27,7 +29,7 @@ class AppRouter {
             child: const LoginScreen(),
           ),
         );
-           case Routes.signUpScreen:
+      case Routes.signUpScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => getIt<SignupCubit>(),
@@ -36,16 +38,13 @@ class AppRouter {
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
-        );
-      default:
-        return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(
-              child: Text('No route define in ${settings.name}'),
-            ),
+          builder: (_) => BlocProvider(
+            create: (context) => HomeCubit(getIt())..emitSpeciality(),
+            child: const HomeScreen(),
           ),
         );
+      default:
+        return null;
     }
   }
 }
