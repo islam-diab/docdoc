@@ -21,12 +21,12 @@ class SpecialityDoctorBlocBuilder extends StatelessWidget {
       },
       builder: (context, state) {
         return state.maybeWhen(
-          specialityLoading: () => sutapLoading(),
+          specialityLoading: () => setupLoading(),
           specialitySuccess: (specialityModel) {
             var specialitionList = specialityModel.specializationDataList;
-            return sutapSucces(specialitionList);
+            return setupSucces(specialitionList);
           },
-          specialityError: (error) => sutabError(error),
+          specialityError: (error) => setupError(error),
           orElse: () {
             return const Text('Something went wrong!');
           },
