@@ -20,13 +20,15 @@ class LoginResponse {
       _$LoginResponseFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(
+
+)
 class UserData {
-  String? tokun;
+  String? token;
   @JsonKey(name: 'username')
   String? userName;
 
-  UserData({this.tokun, this.userName});
+  UserData({this.token, this.userName});
 
   factory UserData.fromJson(Map<String, dynamic> json) =>
       _$UserDataFromJson(json);

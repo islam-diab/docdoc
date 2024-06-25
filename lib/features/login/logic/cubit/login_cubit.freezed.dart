@@ -20,7 +20,7 @@ mixin _$LoginState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) succes,
+    required TResult Function(LoginResponse data) succes,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$LoginState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? succes,
+    TResult? Function(LoginResponse data)? succes,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$LoginState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? succes,
+    TResult Function(LoginResponse data)? succes,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -126,7 +126,7 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) succes,
+    required TResult Function(LoginResponse data) succes,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -137,7 +137,7 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? succes,
+    TResult? Function(LoginResponse data)? succes,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -148,7 +148,7 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? succes,
+    TResult Function(LoginResponse data)? succes,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -240,7 +240,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) succes,
+    required TResult Function(LoginResponse data) succes,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -251,7 +251,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? succes,
+    TResult? Function(LoginResponse data)? succes,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -262,7 +262,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? succes,
+    TResult Function(LoginResponse data)? succes,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -320,7 +320,7 @@ abstract class _$$SuccesImplCopyWith<T, $Res> {
           _$SuccesImpl<T> value, $Res Function(_$SuccesImpl<T>) then) =
       __$$SuccesImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({LoginResponse data});
 }
 
 /// @nodoc
@@ -334,13 +334,13 @@ class __$$SuccesImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$SuccesImpl<T>(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as LoginResponse,
     ));
   }
 }
@@ -351,7 +351,7 @@ class _$SuccesImpl<T> implements Succes<T> {
   const _$SuccesImpl(this.data);
 
   @override
-  final T data;
+  final LoginResponse data;
 
   @override
   String toString() {
@@ -363,12 +363,11 @@ class _$SuccesImpl<T> implements Succes<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccesImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
@@ -381,7 +380,7 @@ class _$SuccesImpl<T> implements Succes<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) succes,
+    required TResult Function(LoginResponse data) succes,
     required TResult Function(String error) error,
   }) {
     return succes(data);
@@ -392,7 +391,7 @@ class _$SuccesImpl<T> implements Succes<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? succes,
+    TResult? Function(LoginResponse data)? succes,
     TResult? Function(String error)? error,
   }) {
     return succes?.call(data);
@@ -403,7 +402,7 @@ class _$SuccesImpl<T> implements Succes<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? succes,
+    TResult Function(LoginResponse data)? succes,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -452,9 +451,9 @@ class _$SuccesImpl<T> implements Succes<T> {
 }
 
 abstract class Succes<T> implements LoginState<T> {
-  const factory Succes(final T data) = _$SuccesImpl<T>;
+  const factory Succes(final LoginResponse data) = _$SuccesImpl<T>;
 
-  T get data;
+  LoginResponse get data;
   @JsonKey(ignore: true)
   _$$SuccesImplCopyWith<T, _$SuccesImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -526,7 +525,7 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) succes,
+    required TResult Function(LoginResponse data) succes,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -537,7 +536,7 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? succes,
+    TResult? Function(LoginResponse data)? succes,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -548,7 +547,7 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? succes,
+    TResult Function(LoginResponse data)? succes,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
