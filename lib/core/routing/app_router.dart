@@ -1,7 +1,7 @@
 import 'package:docdoc/core/di/dependecy_injection.dart';
 import 'package:docdoc/core/routing/routes.dart';
 import 'package:docdoc/features/home/logic/home_cubit.dart';
-import 'package:docdoc/features/home/ui/screen/home_screen.dart';
+import 'package:docdoc/features/home/ui/home_screen.dart';
 import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/login/ui/login_screen.dart';
 import 'package:docdoc/features/on_boarding/ui/on_boarging_screen.dart';

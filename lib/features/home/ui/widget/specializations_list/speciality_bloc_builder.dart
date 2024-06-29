@@ -3,13 +3,14 @@ import 'package:docdoc/core/networking/api_error_handler.dart';
 import 'package:docdoc/features/home/data/model/specializations_response_model.dart';
 import 'package:docdoc/features/home/logic/home_cubit.dart';
 import 'package:docdoc/features/home/logic/home_state.dart';
-import 'package:docdoc/features/home/ui/widget/doctor_list_view.dart';
-import 'package:docdoc/features/home/ui/widget/doctor_speciality_list.dart';
+import 'package:docdoc/features/home/ui/widget/doctots_list/doctors_shimmer_loading.dart';
+import 'package:docdoc/features/home/ui/widget/specializations_list/speciality_list_view.dart';
+import 'package:docdoc/features/home/ui/widget/specializations_list/specializations_shimmer_loaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SpecialityDoctorBlocBuilder extends StatelessWidget {
-  const SpecialityDoctorBlocBuilder({super.key});
+class SpecialityBlocBuilder extends StatelessWidget {
+  const SpecialityBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +22,11 @@ class SpecialityDoctorBlocBuilder extends StatelessWidget {
       },
       builder: (context, state) {
         return state.maybeWhen(
-          specialityLoading: () => sutapLoading(),
+          specialityLoading: () => setupLoading(),
           specialitySuccess: (specialityModel) {
-            var specialitionList = specialityModel.specializationDataList;
-            return sutapSucces(specialitionList);
+            return setupSucces(specialityModel);
           },
-          specialityError: (error) => sutabError(error),
+          specialityError: (error) => setupError(error),
           orElse: () {
             return const Text('Something went wrong!');
           },
@@ -36,23 +36,21 @@ class SpecialityDoctorBlocBuilder extends StatelessWidget {
   }
 
   Widget setupSucces(List<SpecializationsData?>? specialitionList) {
-    return Expanded(
-      child: Column(
-        children: [
-          DoctorSpeciality(
-            specializationsData: specialitionList ?? [],
-          ),
-          verticalSpace(20),
-          DoctorListView(
-            doctorModel: specialitionList?[0]?.doctorsList,
-          ),
-        ],
-      ),
+    return SpecialityListView(
+      specializationsData: specialitionList ?? [],
     );
   }
 
   Widget setupLoading() {
-    return const CircularProgressIndicator();
+    return Expanded(
+      child: Column(
+        children: [
+          const SpecialityShimmerLoading(),
+          verticalSpace(8),
+          const DoctorsShimmerLoading(),
+        ],
+      ),
+    );
   }
 
   Widget setupError(ErrorHandler error) {
