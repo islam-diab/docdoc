@@ -25,25 +25,26 @@ class DoctorListViewItem extends StatelessWidget {
           ),
           horizontalSpace(16),
           Expanded(
-              child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                doctorsModel.name ?? 'Name',
-                style: AppTextStyles.font16DarkBlueBold,
-              ),
-              verticalSpace(5),
-              Text(
-                '${doctorsModel.degree} | ${doctorsModel.phone}',
-                style: AppTextStyles.font12GrayMedium,
-              ),
-              verticalSpace(5),
-              Text(
-                doctorsModel.email ?? 'Email',
-                style: AppTextStyles.font12GrayMedium,
-              ),
-            ],
-          ))
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  doctorsModel.name ?? 'Name',
+                  style: AppTextStyles.font16DarkBlueBold,
+                ),
+                verticalSpace(5),
+                Text(
+                  '${doctorsModel.degree} | ${doctorsModel.phone}',
+                  style: AppTextStyles.font12GrayMedium,
+                ),
+                verticalSpace(5),
+                Text(
+                  doctorsModel.email ?? 'Email',
+                  style: AppTextStyles.font12GrayMedium,
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

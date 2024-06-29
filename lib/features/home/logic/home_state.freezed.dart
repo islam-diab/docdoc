@@ -20,27 +20,33 @@ mixin _$HomeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() specialityLoading,
-    required TResult Function(SpecializationsResponseModel specialityModel)
+    required TResult Function(List<SpecializationsData?>? specialityModel)
         specialitySuccess,
     required TResult Function(ErrorHandler error) specialityError,
+    required TResult Function(List<Doctors?>? doctorList) doctorSuccess,
+    required TResult Function(ErrorHandler error) doctorError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? specialityLoading,
-    TResult? Function(SpecializationsResponseModel specialityModel)?
+    TResult? Function(List<SpecializationsData?>? specialityModel)?
         specialitySuccess,
     TResult? Function(ErrorHandler error)? specialityError,
+    TResult? Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult? Function(ErrorHandler error)? doctorError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? specialityLoading,
-    TResult Function(SpecializationsResponseModel specialityModel)?
+    TResult Function(List<SpecializationsData?>? specialityModel)?
         specialitySuccess,
     TResult Function(ErrorHandler error)? specialityError,
+    TResult Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult Function(ErrorHandler error)? doctorError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,6 +56,8 @@ mixin _$HomeState {
     required TResult Function(SpecialityLoading value) specialityLoading,
     required TResult Function(SpecialitySuccess value) specialitySuccess,
     required TResult Function(SpecialityError value) specialityError,
+    required TResult Function(DoctorSuccess value) doctorSuccess,
+    required TResult Function(DoctorError value) doctorError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +66,8 @@ mixin _$HomeState {
     TResult? Function(SpecialityLoading value)? specialityLoading,
     TResult? Function(SpecialitySuccess value)? specialitySuccess,
     TResult? Function(SpecialityError value)? specialityError,
+    TResult? Function(DoctorSuccess value)? doctorSuccess,
+    TResult? Function(DoctorError value)? doctorError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +76,8 @@ mixin _$HomeState {
     TResult Function(SpecialityLoading value)? specialityLoading,
     TResult Function(SpecialitySuccess value)? specialitySuccess,
     TResult Function(SpecialityError value)? specialityError,
+    TResult Function(DoctorSuccess value)? doctorSuccess,
+    TResult Function(DoctorError value)? doctorError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,9 +140,11 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() specialityLoading,
-    required TResult Function(SpecializationsResponseModel specialityModel)
+    required TResult Function(List<SpecializationsData?>? specialityModel)
         specialitySuccess,
     required TResult Function(ErrorHandler error) specialityError,
+    required TResult Function(List<Doctors?>? doctorList) doctorSuccess,
+    required TResult Function(ErrorHandler error) doctorError,
   }) {
     return initial();
   }
@@ -140,9 +154,11 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? specialityLoading,
-    TResult? Function(SpecializationsResponseModel specialityModel)?
+    TResult? Function(List<SpecializationsData?>? specialityModel)?
         specialitySuccess,
     TResult? Function(ErrorHandler error)? specialityError,
+    TResult? Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult? Function(ErrorHandler error)? doctorError,
   }) {
     return initial?.call();
   }
@@ -152,9 +168,11 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? specialityLoading,
-    TResult Function(SpecializationsResponseModel specialityModel)?
+    TResult Function(List<SpecializationsData?>? specialityModel)?
         specialitySuccess,
     TResult Function(ErrorHandler error)? specialityError,
+    TResult Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult Function(ErrorHandler error)? doctorError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -170,6 +188,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(SpecialityLoading value) specialityLoading,
     required TResult Function(SpecialitySuccess value) specialitySuccess,
     required TResult Function(SpecialityError value) specialityError,
+    required TResult Function(DoctorSuccess value) doctorSuccess,
+    required TResult Function(DoctorError value) doctorError,
   }) {
     return initial(this);
   }
@@ -181,6 +201,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(SpecialityLoading value)? specialityLoading,
     TResult? Function(SpecialitySuccess value)? specialitySuccess,
     TResult? Function(SpecialityError value)? specialityError,
+    TResult? Function(DoctorSuccess value)? doctorSuccess,
+    TResult? Function(DoctorError value)? doctorError,
   }) {
     return initial?.call(this);
   }
@@ -192,6 +214,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(SpecialityLoading value)? specialityLoading,
     TResult Function(SpecialitySuccess value)? specialitySuccess,
     TResult Function(SpecialityError value)? specialityError,
+    TResult Function(DoctorSuccess value)? doctorSuccess,
+    TResult Function(DoctorError value)? doctorError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -245,9 +269,11 @@ class _$SpecialityLoadingImpl implements SpecialityLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() specialityLoading,
-    required TResult Function(SpecializationsResponseModel specialityModel)
+    required TResult Function(List<SpecializationsData?>? specialityModel)
         specialitySuccess,
     required TResult Function(ErrorHandler error) specialityError,
+    required TResult Function(List<Doctors?>? doctorList) doctorSuccess,
+    required TResult Function(ErrorHandler error) doctorError,
   }) {
     return specialityLoading();
   }
@@ -257,9 +283,11 @@ class _$SpecialityLoadingImpl implements SpecialityLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? specialityLoading,
-    TResult? Function(SpecializationsResponseModel specialityModel)?
+    TResult? Function(List<SpecializationsData?>? specialityModel)?
         specialitySuccess,
     TResult? Function(ErrorHandler error)? specialityError,
+    TResult? Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult? Function(ErrorHandler error)? doctorError,
   }) {
     return specialityLoading?.call();
   }
@@ -269,9 +297,11 @@ class _$SpecialityLoadingImpl implements SpecialityLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? specialityLoading,
-    TResult Function(SpecializationsResponseModel specialityModel)?
+    TResult Function(List<SpecializationsData?>? specialityModel)?
         specialitySuccess,
     TResult Function(ErrorHandler error)? specialityError,
+    TResult Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult Function(ErrorHandler error)? doctorError,
     required TResult orElse(),
   }) {
     if (specialityLoading != null) {
@@ -287,6 +317,8 @@ class _$SpecialityLoadingImpl implements SpecialityLoading {
     required TResult Function(SpecialityLoading value) specialityLoading,
     required TResult Function(SpecialitySuccess value) specialitySuccess,
     required TResult Function(SpecialityError value) specialityError,
+    required TResult Function(DoctorSuccess value) doctorSuccess,
+    required TResult Function(DoctorError value) doctorError,
   }) {
     return specialityLoading(this);
   }
@@ -298,6 +330,8 @@ class _$SpecialityLoadingImpl implements SpecialityLoading {
     TResult? Function(SpecialityLoading value)? specialityLoading,
     TResult? Function(SpecialitySuccess value)? specialitySuccess,
     TResult? Function(SpecialityError value)? specialityError,
+    TResult? Function(DoctorSuccess value)? doctorSuccess,
+    TResult? Function(DoctorError value)? doctorError,
   }) {
     return specialityLoading?.call(this);
   }
@@ -309,6 +343,8 @@ class _$SpecialityLoadingImpl implements SpecialityLoading {
     TResult Function(SpecialityLoading value)? specialityLoading,
     TResult Function(SpecialitySuccess value)? specialitySuccess,
     TResult Function(SpecialityError value)? specialityError,
+    TResult Function(DoctorSuccess value)? doctorSuccess,
+    TResult Function(DoctorError value)? doctorError,
     required TResult orElse(),
   }) {
     if (specialityLoading != null) {
@@ -328,7 +364,7 @@ abstract class _$$SpecialitySuccessImplCopyWith<$Res> {
           $Res Function(_$SpecialitySuccessImpl) then) =
       __$$SpecialitySuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({SpecializationsResponseModel specialityModel});
+  $Res call({List<SpecializationsData?>? specialityModel});
 }
 
 /// @nodoc
@@ -342,13 +378,13 @@ class __$$SpecialitySuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? specialityModel = null,
+    Object? specialityModel = freezed,
   }) {
     return _then(_$SpecialitySuccessImpl(
-      null == specialityModel
-          ? _value.specialityModel
+      freezed == specialityModel
+          ? _value._specialityModel
           : specialityModel // ignore: cast_nullable_to_non_nullable
-              as SpecializationsResponseModel,
+              as List<SpecializationsData?>?,
     ));
   }
 }
@@ -356,10 +392,19 @@ class __$$SpecialitySuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SpecialitySuccessImpl implements SpecialitySuccess {
-  const _$SpecialitySuccessImpl(this.specialityModel);
+  const _$SpecialitySuccessImpl(
+      final List<SpecializationsData?>? specialityModel)
+      : _specialityModel = specialityModel;
 
+  final List<SpecializationsData?>? _specialityModel;
   @override
-  final SpecializationsResponseModel specialityModel;
+  List<SpecializationsData?>? get specialityModel {
+    final value = _specialityModel;
+    if (value == null) return null;
+    if (_specialityModel is EqualUnmodifiableListView) return _specialityModel;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -371,12 +416,13 @@ class _$SpecialitySuccessImpl implements SpecialitySuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SpecialitySuccessImpl &&
-            (identical(other.specialityModel, specialityModel) ||
-                other.specialityModel == specialityModel));
+            const DeepCollectionEquality()
+                .equals(other._specialityModel, _specialityModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, specialityModel);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_specialityModel));
 
   @JsonKey(ignore: true)
   @override
@@ -390,9 +436,11 @@ class _$SpecialitySuccessImpl implements SpecialitySuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() specialityLoading,
-    required TResult Function(SpecializationsResponseModel specialityModel)
+    required TResult Function(List<SpecializationsData?>? specialityModel)
         specialitySuccess,
     required TResult Function(ErrorHandler error) specialityError,
+    required TResult Function(List<Doctors?>? doctorList) doctorSuccess,
+    required TResult Function(ErrorHandler error) doctorError,
   }) {
     return specialitySuccess(specialityModel);
   }
@@ -402,9 +450,11 @@ class _$SpecialitySuccessImpl implements SpecialitySuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? specialityLoading,
-    TResult? Function(SpecializationsResponseModel specialityModel)?
+    TResult? Function(List<SpecializationsData?>? specialityModel)?
         specialitySuccess,
     TResult? Function(ErrorHandler error)? specialityError,
+    TResult? Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult? Function(ErrorHandler error)? doctorError,
   }) {
     return specialitySuccess?.call(specialityModel);
   }
@@ -414,9 +464,11 @@ class _$SpecialitySuccessImpl implements SpecialitySuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? specialityLoading,
-    TResult Function(SpecializationsResponseModel specialityModel)?
+    TResult Function(List<SpecializationsData?>? specialityModel)?
         specialitySuccess,
     TResult Function(ErrorHandler error)? specialityError,
+    TResult Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult Function(ErrorHandler error)? doctorError,
     required TResult orElse(),
   }) {
     if (specialitySuccess != null) {
@@ -432,6 +484,8 @@ class _$SpecialitySuccessImpl implements SpecialitySuccess {
     required TResult Function(SpecialityLoading value) specialityLoading,
     required TResult Function(SpecialitySuccess value) specialitySuccess,
     required TResult Function(SpecialityError value) specialityError,
+    required TResult Function(DoctorSuccess value) doctorSuccess,
+    required TResult Function(DoctorError value) doctorError,
   }) {
     return specialitySuccess(this);
   }
@@ -443,6 +497,8 @@ class _$SpecialitySuccessImpl implements SpecialitySuccess {
     TResult? Function(SpecialityLoading value)? specialityLoading,
     TResult? Function(SpecialitySuccess value)? specialitySuccess,
     TResult? Function(SpecialityError value)? specialityError,
+    TResult? Function(DoctorSuccess value)? doctorSuccess,
+    TResult? Function(DoctorError value)? doctorError,
   }) {
     return specialitySuccess?.call(this);
   }
@@ -454,6 +510,8 @@ class _$SpecialitySuccessImpl implements SpecialitySuccess {
     TResult Function(SpecialityLoading value)? specialityLoading,
     TResult Function(SpecialitySuccess value)? specialitySuccess,
     TResult Function(SpecialityError value)? specialityError,
+    TResult Function(DoctorSuccess value)? doctorSuccess,
+    TResult Function(DoctorError value)? doctorError,
     required TResult orElse(),
   }) {
     if (specialitySuccess != null) {
@@ -465,10 +523,10 @@ class _$SpecialitySuccessImpl implements SpecialitySuccess {
 
 abstract class SpecialitySuccess implements HomeState {
   const factory SpecialitySuccess(
-          final SpecializationsResponseModel specialityModel) =
+          final List<SpecializationsData?>? specialityModel) =
       _$SpecialitySuccessImpl;
 
-  SpecializationsResponseModel get specialityModel;
+  List<SpecializationsData?>? get specialityModel;
   @JsonKey(ignore: true)
   _$$SpecialitySuccessImplCopyWith<_$SpecialitySuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -541,9 +599,11 @@ class _$SpecialityErrorImpl implements SpecialityError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() specialityLoading,
-    required TResult Function(SpecializationsResponseModel specialityModel)
+    required TResult Function(List<SpecializationsData?>? specialityModel)
         specialitySuccess,
     required TResult Function(ErrorHandler error) specialityError,
+    required TResult Function(List<Doctors?>? doctorList) doctorSuccess,
+    required TResult Function(ErrorHandler error) doctorError,
   }) {
     return specialityError(error);
   }
@@ -553,9 +613,11 @@ class _$SpecialityErrorImpl implements SpecialityError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? specialityLoading,
-    TResult? Function(SpecializationsResponseModel specialityModel)?
+    TResult? Function(List<SpecializationsData?>? specialityModel)?
         specialitySuccess,
     TResult? Function(ErrorHandler error)? specialityError,
+    TResult? Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult? Function(ErrorHandler error)? doctorError,
   }) {
     return specialityError?.call(error);
   }
@@ -565,9 +627,11 @@ class _$SpecialityErrorImpl implements SpecialityError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? specialityLoading,
-    TResult Function(SpecializationsResponseModel specialityModel)?
+    TResult Function(List<SpecializationsData?>? specialityModel)?
         specialitySuccess,
     TResult Function(ErrorHandler error)? specialityError,
+    TResult Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult Function(ErrorHandler error)? doctorError,
     required TResult orElse(),
   }) {
     if (specialityError != null) {
@@ -583,6 +647,8 @@ class _$SpecialityErrorImpl implements SpecialityError {
     required TResult Function(SpecialityLoading value) specialityLoading,
     required TResult Function(SpecialitySuccess value) specialitySuccess,
     required TResult Function(SpecialityError value) specialityError,
+    required TResult Function(DoctorSuccess value) doctorSuccess,
+    required TResult Function(DoctorError value) doctorError,
   }) {
     return specialityError(this);
   }
@@ -594,6 +660,8 @@ class _$SpecialityErrorImpl implements SpecialityError {
     TResult? Function(SpecialityLoading value)? specialityLoading,
     TResult? Function(SpecialitySuccess value)? specialitySuccess,
     TResult? Function(SpecialityError value)? specialityError,
+    TResult? Function(DoctorSuccess value)? doctorSuccess,
+    TResult? Function(DoctorError value)? doctorError,
   }) {
     return specialityError?.call(this);
   }
@@ -605,6 +673,8 @@ class _$SpecialityErrorImpl implements SpecialityError {
     TResult Function(SpecialityLoading value)? specialityLoading,
     TResult Function(SpecialitySuccess value)? specialitySuccess,
     TResult Function(SpecialityError value)? specialityError,
+    TResult Function(DoctorSuccess value)? doctorSuccess,
+    TResult Function(DoctorError value)? doctorError,
     required TResult orElse(),
   }) {
     if (specialityError != null) {
@@ -621,5 +691,336 @@ abstract class SpecialityError implements HomeState {
   ErrorHandler get error;
   @JsonKey(ignore: true)
   _$$SpecialityErrorImplCopyWith<_$SpecialityErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DoctorSuccessImplCopyWith<$Res> {
+  factory _$$DoctorSuccessImplCopyWith(
+          _$DoctorSuccessImpl value, $Res Function(_$DoctorSuccessImpl) then) =
+      __$$DoctorSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Doctors?>? doctorList});
+}
+
+/// @nodoc
+class __$$DoctorSuccessImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$DoctorSuccessImpl>
+    implements _$$DoctorSuccessImplCopyWith<$Res> {
+  __$$DoctorSuccessImplCopyWithImpl(
+      _$DoctorSuccessImpl _value, $Res Function(_$DoctorSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? doctorList = freezed,
+  }) {
+    return _then(_$DoctorSuccessImpl(
+      freezed == doctorList
+          ? _value._doctorList
+          : doctorList // ignore: cast_nullable_to_non_nullable
+              as List<Doctors?>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DoctorSuccessImpl implements DoctorSuccess {
+  const _$DoctorSuccessImpl(final List<Doctors?>? doctorList)
+      : _doctorList = doctorList;
+
+  final List<Doctors?>? _doctorList;
+  @override
+  List<Doctors?>? get doctorList {
+    final value = _doctorList;
+    if (value == null) return null;
+    if (_doctorList is EqualUnmodifiableListView) return _doctorList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'HomeState.doctorSuccess(doctorList: $doctorList)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DoctorSuccessImpl &&
+            const DeepCollectionEquality()
+                .equals(other._doctorList, _doctorList));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_doctorList));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DoctorSuccessImplCopyWith<_$DoctorSuccessImpl> get copyWith =>
+      __$$DoctorSuccessImplCopyWithImpl<_$DoctorSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() specialityLoading,
+    required TResult Function(List<SpecializationsData?>? specialityModel)
+        specialitySuccess,
+    required TResult Function(ErrorHandler error) specialityError,
+    required TResult Function(List<Doctors?>? doctorList) doctorSuccess,
+    required TResult Function(ErrorHandler error) doctorError,
+  }) {
+    return doctorSuccess(doctorList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? specialityLoading,
+    TResult? Function(List<SpecializationsData?>? specialityModel)?
+        specialitySuccess,
+    TResult? Function(ErrorHandler error)? specialityError,
+    TResult? Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult? Function(ErrorHandler error)? doctorError,
+  }) {
+    return doctorSuccess?.call(doctorList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? specialityLoading,
+    TResult Function(List<SpecializationsData?>? specialityModel)?
+        specialitySuccess,
+    TResult Function(ErrorHandler error)? specialityError,
+    TResult Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult Function(ErrorHandler error)? doctorError,
+    required TResult orElse(),
+  }) {
+    if (doctorSuccess != null) {
+      return doctorSuccess(doctorList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(SpecialityLoading value) specialityLoading,
+    required TResult Function(SpecialitySuccess value) specialitySuccess,
+    required TResult Function(SpecialityError value) specialityError,
+    required TResult Function(DoctorSuccess value) doctorSuccess,
+    required TResult Function(DoctorError value) doctorError,
+  }) {
+    return doctorSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(SpecialityLoading value)? specialityLoading,
+    TResult? Function(SpecialitySuccess value)? specialitySuccess,
+    TResult? Function(SpecialityError value)? specialityError,
+    TResult? Function(DoctorSuccess value)? doctorSuccess,
+    TResult? Function(DoctorError value)? doctorError,
+  }) {
+    return doctorSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(SpecialityLoading value)? specialityLoading,
+    TResult Function(SpecialitySuccess value)? specialitySuccess,
+    TResult Function(SpecialityError value)? specialityError,
+    TResult Function(DoctorSuccess value)? doctorSuccess,
+    TResult Function(DoctorError value)? doctorError,
+    required TResult orElse(),
+  }) {
+    if (doctorSuccess != null) {
+      return doctorSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DoctorSuccess implements HomeState {
+  const factory DoctorSuccess(final List<Doctors?>? doctorList) =
+      _$DoctorSuccessImpl;
+
+  List<Doctors?>? get doctorList;
+  @JsonKey(ignore: true)
+  _$$DoctorSuccessImplCopyWith<_$DoctorSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DoctorErrorImplCopyWith<$Res> {
+  factory _$$DoctorErrorImplCopyWith(
+          _$DoctorErrorImpl value, $Res Function(_$DoctorErrorImpl) then) =
+      __$$DoctorErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ErrorHandler error});
+}
+
+/// @nodoc
+class __$$DoctorErrorImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$DoctorErrorImpl>
+    implements _$$DoctorErrorImplCopyWith<$Res> {
+  __$$DoctorErrorImplCopyWithImpl(
+      _$DoctorErrorImpl _value, $Res Function(_$DoctorErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$DoctorErrorImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ErrorHandler,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DoctorErrorImpl implements DoctorError {
+  const _$DoctorErrorImpl(this.error);
+
+  @override
+  final ErrorHandler error;
+
+  @override
+  String toString() {
+    return 'HomeState.doctorError(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DoctorErrorImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DoctorErrorImplCopyWith<_$DoctorErrorImpl> get copyWith =>
+      __$$DoctorErrorImplCopyWithImpl<_$DoctorErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() specialityLoading,
+    required TResult Function(List<SpecializationsData?>? specialityModel)
+        specialitySuccess,
+    required TResult Function(ErrorHandler error) specialityError,
+    required TResult Function(List<Doctors?>? doctorList) doctorSuccess,
+    required TResult Function(ErrorHandler error) doctorError,
+  }) {
+    return doctorError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? specialityLoading,
+    TResult? Function(List<SpecializationsData?>? specialityModel)?
+        specialitySuccess,
+    TResult? Function(ErrorHandler error)? specialityError,
+    TResult? Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult? Function(ErrorHandler error)? doctorError,
+  }) {
+    return doctorError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? specialityLoading,
+    TResult Function(List<SpecializationsData?>? specialityModel)?
+        specialitySuccess,
+    TResult Function(ErrorHandler error)? specialityError,
+    TResult Function(List<Doctors?>? doctorList)? doctorSuccess,
+    TResult Function(ErrorHandler error)? doctorError,
+    required TResult orElse(),
+  }) {
+    if (doctorError != null) {
+      return doctorError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(SpecialityLoading value) specialityLoading,
+    required TResult Function(SpecialitySuccess value) specialitySuccess,
+    required TResult Function(SpecialityError value) specialityError,
+    required TResult Function(DoctorSuccess value) doctorSuccess,
+    required TResult Function(DoctorError value) doctorError,
+  }) {
+    return doctorError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(SpecialityLoading value)? specialityLoading,
+    TResult? Function(SpecialitySuccess value)? specialitySuccess,
+    TResult? Function(SpecialityError value)? specialityError,
+    TResult? Function(DoctorSuccess value)? doctorSuccess,
+    TResult? Function(DoctorError value)? doctorError,
+  }) {
+    return doctorError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(SpecialityLoading value)? specialityLoading,
+    TResult Function(SpecialitySuccess value)? specialitySuccess,
+    TResult Function(SpecialityError value)? specialityError,
+    TResult Function(DoctorSuccess value)? doctorSuccess,
+    TResult Function(DoctorError value)? doctorError,
+    required TResult orElse(),
+  }) {
+    if (doctorError != null) {
+      return doctorError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DoctorError implements HomeState {
+  const factory DoctorError(final ErrorHandler error) = _$DoctorErrorImpl;
+
+  ErrorHandler get error;
+  @JsonKey(ignore: true)
+  _$$DoctorErrorImplCopyWith<_$DoctorErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
